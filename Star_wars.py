@@ -1,10 +1,10 @@
 from pygame import *
 from random import randint
 
-#mixer.init()
-#mixer.music.load("nachalo.mp3")
-#mixer.music.play()
-#fire_sound = mixer.Sound("laser.mp3")
+mixer.init()
+mixer.music.load("nachalo.mp3")
+mixer.music.play()
+fire_sound = mixer.Sound("laser.mp3")
 
 goal = 51
 lost = 0
@@ -114,14 +114,14 @@ while game:
             game = False
         elif e.type == KEYDOWN:
             if e.key == K_e and not game_started:
-                #mixer.music.load("rise.mp3")
-                #mixer.music.play(-1)
+                mixer.music.load("rise.mp3")
+                mixer.music.play(-1)
                 game_started = True
                 finish = False
                 window.blit(background, (0, 0))
                 display.update()
             elif e.key == K_SPACE:
-                #fire_sound.play()
+                fire_sound.play()
                 player.fire()
 
     if game_started:
